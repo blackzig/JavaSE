@@ -5,7 +5,7 @@
  */
 package javase;
 
-import javase.ex1.Exemplo1;
+import javase.ex1.Exemplo1_1;
 
 /**
  *
@@ -17,7 +17,7 @@ public class JavaSE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Exemplo1 e = new Exemplo1();
+        Exemplo1_1 e = new Exemplo1_1();
         e.setVisible(true);
     }
     

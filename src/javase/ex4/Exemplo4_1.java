@@ -31,7 +31,15 @@ public class Exemplo4_1 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JTARegistro = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         JBPressione.setText("Pressione");
         JBPressione.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +90,15 @@ public class Exemplo4_1 extends javax.swing.JFrame {
 //       JTARegistro.setText(text);
 //       JTARegistro.insert("outro ", 10);
     }//GEN-LAST:event_JBPressioneActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        Login a = new Login();
+        a.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

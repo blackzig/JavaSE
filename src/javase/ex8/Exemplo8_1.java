@@ -129,9 +129,12 @@ public class Exemplo8_1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BarraDePessoas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BarraDoSistema, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BarraDoSistema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BarraDePessoas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,9 +157,7 @@ public class Exemplo8_1 extends javax.swing.JFrame {
 
     private void SystemBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemBarActionPerformed
         if (SystemBar.isSelected()) {
-            if (!BarraDoSistema.isVisible()) {
-                BarraDoSistema.setVisible(true);
-            }
+            BarraDoSistema.setVisible(true);
         } else {
             BarraDoSistema.setVisible(false);
         }
@@ -164,10 +165,8 @@ public class Exemplo8_1 extends javax.swing.JFrame {
 
     private void PersonBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonBarActionPerformed
         if (PersonBar.isSelected()) {
-            if (!BarraDePessoas.isVisible()) {
-                BarraDePessoas.setVisible(true);
-               // BarraDePessoas.setLocation(5, 80);
-            }
+            BarraDePessoas.setVisible(true);
+            BarraDePessoas.setLocation(5, 80);
         } else {
             BarraDePessoas.setVisible(false);
         }

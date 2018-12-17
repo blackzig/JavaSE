@@ -68,11 +68,12 @@ public class UsuarioView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formInternalFrameClosing(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosing
-       JMIUsuario.setEnabled(true);
+        JMIUsuario.setEnabled(true);
     }//GEN-LAST:event_formInternalFrameClosing
 
     private void formInternalFrameIconified(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameIconified
-     // evt.getInternalFrame().moveToFront();
+        System.out.println("para frente");
+        evt.getInternalFrame().moveToFront();
     }//GEN-LAST:event_formInternalFrameIconified
 
 

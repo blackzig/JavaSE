@@ -23,7 +23,8 @@ public class MinhaLinha implements Runnable {
                 System.out.println("Contagem: " + i);
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(MinhaLinha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MinhaLinha.class.getName())
+                        .log(Level.SEVERE, null, ex);
             }
         }
 

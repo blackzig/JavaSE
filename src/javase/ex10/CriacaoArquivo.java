@@ -19,7 +19,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class CriacaoArquivo {
 
     public static void main(String[] args) {
-        String dir = showInputDialog("Em qual diretório deseja criar?");
+        String dir = showInputDialog("Qual o nome da pasta?");
         if (dir == null) {
             System.exit(0);
         }

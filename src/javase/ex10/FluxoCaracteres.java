@@ -38,7 +38,7 @@ public class FluxoCaracteres {
                             .log(Level.SEVERE, null, ex);
                 }
             }
-            if (fr != null) {
+            if (fw != null) {
                 try {
                     fw.close();
                 } catch (IOException ex) {

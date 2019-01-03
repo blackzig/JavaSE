@@ -5,6 +5,8 @@
  */
 package javase.ex10;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,35 +17,34 @@ import java.util.logging.Logger;
  *
  * @author Michel
  */
-public class FluxoCaracteres {
+public class FluxoBufferizado {
 
     public static void main(String[] args) {
-        FileReader fr = null;
-        FileWriter fw = null;
+        BufferedReader br = null;
+        BufferedWriter bw = null;
         try {
-            //fr = new FileReader("src\\javase\\EntiArarasDev2017.pptx");
-            fr = new FileReader("src\\javase\\Aulas.txt");
-            fw = new FileWriter("src\\javase\\copiaAulas.txt");
-            int bt;
-            while ((bt = fr.read()) != -1) {
-                fw.write(bt);
+            br = new BufferedReader(new FileReader("src\\javase\\Aulas.txt"));
+            bw = new BufferedWriter(new FileWriter("src\\javase\\AulasFB.txt"));
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                bw.write(linha + System.getProperty("line.separator"));
             }
         } catch (IOException e) {
             System.out.println("ERROR " + e.getMessage());
         } finally {
-            if (fr != null) {
+            if (br != null) {
                 try {
-                    fr.close();
+                    br.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(FluxoCaracteres.class.getName())
+                    Logger.getLogger(FluxoBufferizado.class.getName())
                             .log(Level.SEVERE, null, ex);
                 }
             }
-            if (fw != null) {
+            if (bw != null) {
                 try {
-                    fw.close();
+                    bw.close();
                 } catch (IOException ex) {
-                    Logger.getLogger(FluxoCaracteres.class.getName())
+                    Logger.getLogger(FluxoBufferizado.class.getName())
                             .log(Level.SEVERE, null, ex);
                 }
             }

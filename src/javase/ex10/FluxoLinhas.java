@@ -6,10 +6,10 @@
 package javase.ex10;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,17 +17,17 @@ import java.util.logging.Logger;
  *
  * @author Michel
  */
-public class FluxoBufferizado {
+public class FluxoLinhas {
 
     public static void main(String[] args) {
         BufferedReader br = null;
-        BufferedWriter bw = null;
+        PrintWriter pw = null;
         try {
             br = new BufferedReader(new FileReader("src\\javase\\Aulas.txt"));
-            bw = new BufferedWriter(new FileWriter("src\\javase\\AulasFB.txt"));
+            pw = new PrintWriter(new FileWriter("src\\javase\\AulasFW.txt"));
             String linha;
             while ((linha = br.readLine()) != null) {
-                bw.write(linha + System.getProperty("line.separator"));
+                pw.println(linha);
             }
         } catch (IOException e) {
             System.out.println("ERROR " + e.getMessage());
@@ -40,17 +40,12 @@ public class FluxoBufferizado {
                             .log(Level.SEVERE, null, ex);
                 }
             }
-            if (bw != null) {
-                try {
-                    bw.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(FluxoBufferizado.class.getName())
-                            .log(Level.SEVERE, null, ex);
-                }
+            if (pw != null) {
+                pw.close();
             }
         }
     }
 }
 /*
-https://stackoverflow.com/questions/9648811/specific-difference-between-bufferedreader-and-filereader
+https://stackoverflow.com/questions/1747040/difference-between-java-io-printwriter-and-java-io-bufferedwriter
 */

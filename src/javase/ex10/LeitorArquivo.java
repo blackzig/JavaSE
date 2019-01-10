@@ -19,7 +19,8 @@ import static javax.swing.JOptionPane.showMessageDialog;
  */
 public class LeitorArquivo {
 
-    public static void main(String args[]) {
+    public void teste() {
+        //public static void main(String args[]) {
         String nome = showInputDialog("Digite o nome do arquivo");
         if (nome == null) {
             System.exit(0);
@@ -40,5 +41,6 @@ public class LeitorArquivo {
             showMessageDialog(null, "Arquivo não encontrado!", "Erro",
                     ERROR_MESSAGE);
         }
+        //  }
     }
 }

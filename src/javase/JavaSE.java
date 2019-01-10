@@ -5,6 +5,8 @@
  */
 package javase;
 
+import javase.ex10.LeitorArquivo;
+
 /**
  *
  * @author Michel
@@ -15,6 +17,7 @@ public class JavaSE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-  
+        LeitorArquivo la = new LeitorArquivo();
+        la.teste();
     }
 }
